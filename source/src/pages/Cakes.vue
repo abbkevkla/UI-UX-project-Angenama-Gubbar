@@ -8,18 +8,18 @@
             Vi erbjuder helt nybakade bakverk gjorda på uteslutande ekologiska råvaror närproducerade i Västmanland. 
         </div>
     </div>
-      <div style="height: 65%;" class="list scroll q-py-md">
-          <q-item v-for="(item, index) in products" :key="index" class="q-ma-md" >
+      <div style="height: 65vh" class="list scroll q-py-md">
+          <q-item v-for="(item, index) in products" :key="index" class="q-ma-md">
             <q-btn color="primary">
                 <div style="width: 50%;">
-                    <img :src="item.image" width="100%" height="100%">
+                    <img :src="item.image" width="100%" height="150px" class="q-my-sm">
                 </div>
-                <div style="width: 50%" class="text-center text-capitalize">
+                <div style="width: 50%" class="text-center text-capitalize q-px-sm">
                     <div class="text-h5 text-weight-medium">
                         {{ item.title }}
                     </div>
                     
-                    <div class="text-weight-light">
+                    <div class="text-weight-light" style="font-size: 14px">
                         {{ item.previewDescription }}
                     </div>
                 </div>
