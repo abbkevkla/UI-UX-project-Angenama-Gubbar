@@ -5,6 +5,7 @@
         src="../assets/temple.jpg"
         style="height: 550px; width:400px"
       />
+      <h4 style="text-align: right"> “Den vise bygger inget hopp om framtiden och ångrar ingenting i det förflutna.”</h4>
     </div>
   </q-page>
 </template>
