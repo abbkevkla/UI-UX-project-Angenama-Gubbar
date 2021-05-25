@@ -16,17 +16,56 @@
     </q-card-section>
     <q-card-actions class="row justify-evenly dense">
       Lägg till i varukorg:
-      <q-btn color="red" label="-" v-close-popup style="width: 12%"/>
+      <q-btn color="red" label="-" style="width: 12%" @click="subtractItem()"/>
       <q-input dense filled suffix="st" style="width: 20%;"/>
-      <q-btn color="green" label="+" v-close-popup style="width: 12%; text-align: center;"/>
+      <q-btn color="green" label="+" style="width: 12%" @click="addItem()"/>
     </q-card-actions>
   </q-card>
 </template>
 
 <script>
+import store from '../store'
+
 export default {
     props: {
       cakeInfo: Object
+    },
+    computed: {
+      order () {
+        return this.$store.state.orderinfo
+      }
+    },
+    methods: {
+      addItem() {
+        if (this.order.length < 1) {
+          store.commit("updateOrder", this.cakeInfo)
+        }
+        else {
+          let itemFound = false
+          for (const item in this.order) {
+            if (this.order[item].title == this.cakeInfo.title) { // Checks if item already exists in order, if it does not, push it into order
+              store.commit("increaseQuantity", item)
+              itemFound = true
+            }
+          }
+          if (itemFound == false) {
+            store.commit("updateOrder", this.cakeInfo)
+          }
+        }
+        console.log(this.order)
+      },
+      subtractItem() {
+        for (const itemIndex in this.order) {
+            if (this.order[itemIndex].title == this.cakeInfo.title) { // Checks if item exists in order and in that case find the index
+              store.commit("decreaseQuantity", itemIndex)
+              if (this.order[itemIndex].quantity < 1) {
+                store.commit("removeItem", itemIndex)
+              }
+              break
+            }
+          }
+          console.log(this.order)
+      }
     }
 }
 </script>

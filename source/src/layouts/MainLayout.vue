@@ -7,12 +7,10 @@
           Café Karma
         </q-toolbar-title>
 
-        <q-btn v-if="$router.currentRoute.path !== '/cart'"
-          flat
-          dense
-          round
-          icon="shopping_cart"
-        />
+        <div v-if="$router.currentRoute.path !== '/cart'">
+          <q-btn flat dense round icon="shopping_cart" @click="redirect('cart')"/>
+          {{ this.itemsInCart }}
+        </div>
       </q-toolbar>
     </q-header>
 
@@ -23,8 +21,19 @@
 </template>
 
 <script>
+import store from "../store"
 
 export default {
-  name: 'MainLayout'
+  name: 'MainLayout',
+  computed: {
+    itemsInCart () {
+      return this.$store.state.orderinfo.length
+    }
+  },
+  methods: {
+    redirect (address) {
+        this.$router.push(address)
+      }
+  }
 }
 </script>

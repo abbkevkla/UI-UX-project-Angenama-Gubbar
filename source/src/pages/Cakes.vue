@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #f6edbe">
+  <q-page style="background-color: #f6edbe">
     <div>
         <div class="row q-pt-lg">
             <q-btn round dense flat icon="arrow_left" size="md" @click="redirect('home')"/>
@@ -32,11 +32,12 @@
             </q-btn>
             </q-item>
         </div>
-  </div>
+  </q-page>
 </template>
 
 <script>
 import CakeInfoComponent from '../components/CakeInfoComponent.vue'
+import store from '../store'
 
 export default {
     components: {
@@ -55,6 +56,9 @@ export default {
         fetch("http://localhost:3000/cakes")
             .then((resp) => resp.json())
             .then(data => {
+                for (const item in data) {
+                    data[item].quantity = 0; // Adds quantity to each item
+                }
                 console.log(data);
                 this.products = data;
             })
@@ -70,6 +74,6 @@ export default {
         redirect (address) {
             this.$router.push(address)
         }
-        }
     }
+}
 </script>
