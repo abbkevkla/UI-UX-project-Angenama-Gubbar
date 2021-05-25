@@ -24,7 +24,7 @@
             <q-btn class="q-ml-none" color="primary" label="Logga in" @click="login" style="width: 100%; height: 50px;"/>
         </div>
     </q-page>
-    <h7 class="q-pa-sm text-white absolute-bottom-right">© Copyright Angenäma Gubbar 2021</h7>
+    <p class="q-px-sm text-white absolute-bottom-right">© Copyright Angenäma Gubbar 2021</p>
     </q-layout>
 </template>
 
