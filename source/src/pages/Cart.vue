@@ -1,6 +1,6 @@
 <template>
   <q-page style="background-color: #f6edbe;">
-      <div class="row q-pt-lg">
+      <div class="row q-pt-lg q-pb-md">
             <q-btn round dense flat icon="arrow_left" size="md" @click="redirect('cakes')"/>
             <div class="text-h4 text-center text-weight-medium">
                 Din order
@@ -15,15 +15,18 @@
             <removal-component :ItemIndex="OrderIndex"></removal-component>
         </q-dialog>
 
-      <div style="height: 60vh; background-color: #ffffff;" class="list scroll">
+      <div style="max-width: 400px; height: 60vh; background-color: #ffffff;" class="list scroll q-mx-auto">
         <q-item v-for="(item, index) in order" :key="index" class="row justify-between" style="border-bottom-style: solid; border-color: #8a8a8a">
-            <div style="width: 50%; font-size: 18px" class="text-weight-medium q-mt-sm">
-              {{ item.title }} {{ item.price }} $
-            </div>
-              <div class="row justify-end dense">
-                <q-btn color="grey" label="-" class="q-mx-sm" @click="decreaseQuantity(index)"/>
-                <q-input dense filled v-model="item.quantity" suffix="st" style="width: 26%;"/>
-                <q-btn color="primary" class="q-mx-sm" label="+" @click="increaseQuantity(index)"/>
+            <div class="row">
+                <div style="font-size: 18px" class="col-5 text-weight-medium q-mt-sm">
+                    {{ item.title }}
+                </div>
+                <div class="row col-7 justify-end dense text-weight-medium">
+                    <div style="font-size: 18px;" class="q-mt-sm">$ {{ item.price }}</div> 
+                    <q-btn style="height: 40px;" class="q-px-sm q-mr-sm q-ml-lg" dense color="grey" label="-" @click="decreaseQuantity(index)"/>
+                    <q-input dense filled v-model="item.quantity" suffix="st" style="width: 26%;"/>
+                    <q-btn style="height: 40px;" class="q-px-sm q-ml-sm" dense color="primary" label="+" @click="increaseQuantity(index)"/>
+                </div>
             </div>
         </q-item>
       </div>
