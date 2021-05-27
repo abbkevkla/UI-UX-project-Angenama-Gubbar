@@ -30,6 +30,7 @@
 
 <script>
 import axios from 'axios';
+import store from '../store'
 
 export default {
   name: 'Login',
@@ -38,6 +39,7 @@ export default {
         email: null,
         password: null,
         customers: null,
+        accountDetails: null,
         failedLogIn: false,
         isPwd: true,
     }
@@ -55,6 +57,7 @@ export default {
         for(var customer of this.customers){
             if (this.email == customer.email) {
                 if (this.password == customer.password) {
+                    this.accountDetails = customer
                     isValid = true;
                     break;
                 }
@@ -69,6 +72,7 @@ export default {
 
     login() {
         if (this.credentialsAreValid()){
+            store.commit("updateUserInfo", this.accountDetails)
             console.log("logged in");
             this.$router.push('/home')
         }

@@ -39,6 +39,10 @@ export default {
   methods: {
         redirect (address) {
             this.$router.push(address)
+        },
+        logout () {
+          store.commit("clearUserInfo")
+          this.$router.push("/")
         }
     }
 }

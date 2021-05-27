@@ -8,7 +8,7 @@
         </div>
 
         <q-dialog v-model="paymentPrompt" persistent>
-           <payment-component></payment-component>
+           <payment-component :Success="result"></payment-component>
         </q-dialog>
 
         <q-dialog v-model="removalPrompt">
@@ -31,7 +31,7 @@
           Totalt: {{ priceSum }} $
         </div>
       <div class="row justify-center q-my-lg">
-        <q-btn v-if="validOrder == true" color="primary" label="Betala" class="q-pa-sm" style="width: 50%" size="lg" rounded @click="paymentPrompt = true"/>
+        <q-btn v-if="validOrder == true" color="primary" label="Betala" class="q-pa-sm" style="width: 50%" size="lg" rounded @click="completeOrder()"/>
         <q-btn v-else disabled color="primary" label="Betala" class="q-pa-sm" style="width: 50%" size="lg" rounded/>
       </div>
   </q-page>
@@ -50,6 +50,7 @@ export default {
     data () {
         return {
             paymentPrompt: false,
+            result: null,
             removalPrompt: false,
             OrderIndex: Number
         }
@@ -57,6 +58,9 @@ export default {
     computed: {
         order () {
             return this.$store.state.orderinfo
+        },
+        user () {
+            return this.$store.state.userinfo
         },
         priceSum () {
             let price = 0
@@ -88,6 +92,39 @@ export default {
             else {
             store.commit('decreaseQuantity', index)
             }
+        },
+        completeOrder () {
+            let dateobj = new Date();
+            let timestamp = dateobj.toISOString(); // Generate a timestamp
+
+            let cakeList = [] // Create a list for the cakes
+            for (const item in this.order) {
+                cakeList.push({cakeId: this.order[item].id, quantity: this.order[item].quantity})
+            }
+
+            fetch("http://localhost:3000/orders", {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    customerId: this.user.id,
+                    cakes: cakeList,
+                    totalPrice: this.priceSum,
+                    timestamp: timestamp
+                    })
+            })
+            .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    this.paymentPrompt = true
+                    this.result = true
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    this.paymentPrompt = true
+                    this.result = false
+                });
         }
     }
 }

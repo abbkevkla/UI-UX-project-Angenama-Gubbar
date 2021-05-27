@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    orderinfo: []
+    orderinfo: [],
+    userinfo: {}
   },
 
   mutations: {
@@ -13,12 +14,15 @@ export default new Vuex.Store({
       this.state.orderinfo = []
     },
     updateOrder (state, newObj) {
-      console.log('hello there')
       newObj.quantity = 1
       state.orderinfo.push(newObj)
     },
-    updateInfo (state, newObj) {
+    updateUserInfo (state, newObj) {
       state.userinfo = newObj
+      console.log(state.userinfo)
+    },
+    clearUserInfo (state) {
+      state.userinfo = {}
     },
     removeItem (state, itemIndex) {
       state.orderinfo.splice(itemIndex, 1)
@@ -31,9 +35,6 @@ export default new Vuex.Store({
       if (state.orderinfo[itemIndex].quantity < 1) {
         state.orderinfo[itemIndex].quantity = 0
       }
-    },
-    lmao () {
-      console.log("sugma")
     }
   },
   // enable strict mode (adds overhead!)
