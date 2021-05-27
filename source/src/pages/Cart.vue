@@ -6,23 +6,28 @@
                 Din order
             </div>
         </div>
-        <q-dialog v-model="paymentPrompt">
+
+        <q-dialog v-model="paymentPrompt" persistent>
            <payment-component></payment-component>
         </q-dialog>
 
+        <q-dialog v-model="removalPrompt">
+            <removal-component :ItemIndex="OrderIndex"></removal-component>
+        </q-dialog>
+
       <div style="height: 60vh; background-color: #ffffff;" class="list scroll">
-        <q-item v-for="(item, index) in order" :key="index" class="row justify-between" style="border-bottom-style: solid;">
-            <div style="width: 50%">
+        <q-item v-for="(item, index) in order" :key="index" class="row justify-between" style="border-bottom-style: solid; border-color: #8a8a8a">
+            <div style="width: 50%; font-size: 18px" class="text-weight-medium q-mt-sm">
               {{ item.title }} {{ item.price }} $
             </div>
               <div class="row justify-end dense">
-                <q-btn color="red" label="-" class="q-mx-sm" @click="decreaseQuantity(index)"/>
+                <q-btn color="grey" label="-" class="q-mx-sm" @click="decreaseQuantity(index)"/>
                 <q-input dense filled v-model="item.quantity" suffix="st" style="width: 26%;"/>
-                <q-btn color="green" class="q-mx-sm" label="+" @click="increaseQuantity(index)"/>
+                <q-btn color="primary" class="q-mx-sm" label="+" @click="increaseQuantity(index)"/>
             </div>
         </q-item>
       </div>
-        <div class="text-h4 text-center text-weight-medium q-py-md" style="background-color: #ffffff; border-top-style: solid">
+        <div class="text-h4 text-center text-weight-medium q-py-md" style="background-color: #ffffff; border-top-style: solid; border-color: #8a8a8a">
           Totalt: {{ priceSum }} $
         </div>
       <div class="row justify-center q-my-lg">
@@ -35,14 +40,18 @@
 <script>
 import store from '../store'
 import PaymentComponent from '../components/PaymentComponent.vue'
+import RemovalComponent from '../components/RemovalComponent.vue'
 
 export default {
     components: {
-        PaymentComponent
+        PaymentComponent,
+        RemovalComponent
     },
     data () {
         return {
-            paymentPrompt: false
+            paymentPrompt: false,
+            removalPrompt: false,
+            OrderIndex: Number
         }
     },
     computed: {
@@ -72,7 +81,13 @@ export default {
             store.commit('increaseQuantity', index)
         },
         decreaseQuantity (index) {
+            if (this.order[index].quantity <= 1) {
+                this.OrderIndex = index
+                this.removalPrompt = true
+            }  
+            else {
             store.commit('decreaseQuantity', index)
+            }
         }
     }
 }

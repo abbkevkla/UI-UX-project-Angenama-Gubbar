@@ -7,12 +7,12 @@
       />
     </div>
     <div class="absolute-right q-pa-sm">
-      <q-btn color="white" text-color="black" label="Logga ut" class="submit button" @click="signout"/>
+      <q-btn color="white" text-color="black" label="Logga ut" class="submit button" @click="redirect('/')"/>
       <h5 style="text-align: right"> “Den vise bygger inget hopp om framtiden och ångrar ingenting i det förflutna.”</h5>
     </div>
     <div class="fixed-bottom">
       <q-item class="q-ma-md">
-        <q-btn color="primary">
+        <q-btn color="primary" @click="redirect('cakes')">
           <div style="width: 100%" class="text-center text-capitalize">
             <div class="text-h5 text-weight-medium">
               Se bakverk
@@ -21,7 +21,7 @@
         </q-btn>
       </q-item>
       <q-item class="q-ma-md">
-        <q-btn color="primary">
+        <q-btn color="primary" @click="redirect('about')">
           <div style="width: 100%" class="text-center text-capitalize">
             <div class="text-h5 text-weight-medium">
               Om oss
@@ -35,6 +35,11 @@
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  methods: {
+        redirect (address) {
+            this.$router.push(address)
+        }
+    }
 }
 </script>

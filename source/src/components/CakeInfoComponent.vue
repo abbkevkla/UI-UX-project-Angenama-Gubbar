@@ -14,11 +14,13 @@
     <q-card-section class="list scroll q-my-sm" style="height: 30%">
       {{ this.cakeInfo.detailDescription }}
     </q-card-section>
-    <q-card-actions class="row justify-evenly dense">
-      Lägg till i varukorg:
-      <q-btn color="red" label="-" style="width: 12%" @click="subtractItem()"/>
-      <q-input dense filled suffix="st" style="width: 20%;"/>
-      <q-btn color="green" label="+" style="width: 12%" @click="addItem()"/>
+    <q-card-actions class="row justify-evenly dense text-weight-medium">
+      <div>
+        Lägg till i varukorg:
+      </div>
+      <q-btn color="grey" padding="none" dense label="-" style="width: 12%" size="lg" @click="subtractItem()"/>
+      <q-input disable v-model="quantityCounter" dense filled suffix="st" style="width: 20%;"/>
+      <q-btn color="primary" padding="none" dense label="+" style="width: 12%" size="lg" @click="addItem()"/>
     </q-card-actions>
   </q-card>
 </template>
@@ -33,6 +35,16 @@ export default {
     computed: {
       order () {
         return this.$store.state.orderinfo
+      },
+      quantityCounter () {
+        let items = this.order
+        for (const index in items) {
+          if (items[index].title == this.cakeInfo.title) {
+            return items[index].quantity
+            break
+          }
+        }
+        return 0
       }
     },
     methods: {
