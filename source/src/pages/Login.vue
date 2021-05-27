@@ -73,7 +73,7 @@ export default {
     login() {
         if (this.credentialsAreValid()){
             store.commit("updateUserInfo", this.accountDetails)
-            console.log("logged in");
+            //console.log("logged in");
             this.$router.push('/home')
         }
     }
