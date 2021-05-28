@@ -12,6 +12,7 @@ Som appens primära färg valdes orange, då det är en typiskt buddhistisk fär
 
 Både login-skärmen och hemskärmen innehåller en bild på ett buddhistiskt tempel i en djup skog med ett vattenfall i bakgrunden, vilket är något som återigen inger en känsla av lugn, samtidigt som det förstärker intrycket av appens buddhistiska inslag. Templet är dessutom i en färg som matchar appens primära färg, vilket får bilden att passa in bättre och inte kännas påtvingad.
 
+
 ## UX (Användarupplevelse)
 
 Appen har designats för att vara enkel att använda med mobilen. Huvudfokus har varit att presentara informationen på ett tydligt sätt och undvika onödigt många steg och knapptryck.
@@ -33,4 +34,13 @@ Genomgående har valet av placering av knappar byggt på att det ska vara enkelt
 På kundvagnssidan används en pop-up ruta för att försäkra om att användaren inte tryckt fel. Om användaren sätter en vara antal till mindre än 1 tillfrågas den om den vill ta bort produkten från varukorgen eller behålla den.
 
 
+## Testning
+
+Testning har utförts genom Ad Hoc testning som är olika testmetoder som utförs genom att använda applikationen.
+Först gjordes en så kallad "Monkey Testing" där randomiserad input och knapptryckningar gjordes i appen.
+Sedan prövades olika testcase utifrån våra erfarenheter av vad som potentiellt kan orsaka fel.
+Till en början identifierades att det gick att sätta ett negativt antal av bakverk i ordern.
+En funktion för detta var implementerad, en pop-up ruta med alternativen att behålla varan (minst antalet 1), eller att ta bort den. Det visade sig att det gick att klicka utanför pop-up rutan och på så vis ignorera någon av alternativen. Vi ändrade så att det inte gick att trycka bort pop-up rutan på något annat sätt än knapparna.
+
+En annan sak som visade sig var att orderinformation sparades även efter att man loggat ut. Om en person loggar in och påbörjar en order, sedan loggar ut och en annan person loggar in ligger den gamla ordern kvar. Detta fixades genom att tömma all lokal information i klienten vid utloggningen.
 
