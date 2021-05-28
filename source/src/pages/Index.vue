@@ -7,7 +7,7 @@
       />
     </div>
     <div class="absolute-right q-pa-sm">
-      <q-btn color="white" text-color="black" label="Logga ut" class="submit button" @click="redirect('/')"/>
+      <q-btn color="white" text-color="black" label="Logga ut" class="submit button" @click="logout('/')"/>
       <h5 style="text-align: right"> “Den vise bygger inget hopp om framtiden och ångrar ingenting i det förflutna.”</h5>
     </div>
     <div class="fixed-bottom">
@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import store from "../store"
+
 export default {
   name: 'PageIndex',
   methods: {
@@ -42,6 +44,7 @@ export default {
         },
         logout () {
           store.commit("clearUserInfo")
+          store.commit("clearOrder")
           this.$router.push("/")
         }
     }
