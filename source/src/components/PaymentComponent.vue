@@ -3,7 +3,7 @@
         <q-card-section class="row justify-center">
         <div class="text-center">
             <h4 v-if="Success == true">Betalningen lyckades!</h4>
-            <h4 v-else>Något gick  fel...!</h4>
+            <h4 v-else>Något gick  fel...</h4>
         </div>
         </q-card-section>
         <q-card-actions class="row justify-evenly q-mb-md">

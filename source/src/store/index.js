@@ -27,6 +27,9 @@ export default new Vuex.Store({
     removeItem (state, itemIndex) {
       state.orderinfo.splice(itemIndex, 1)
     },
+    restoreItem (state, itemIndex) {
+      state.orderinfo[itemIndex].quantity = 1
+    },
     increaseQuantity (state, itemIndex) {
       state.orderinfo[itemIndex].quantity += 1
     },

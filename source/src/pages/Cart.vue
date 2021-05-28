@@ -24,7 +24,7 @@
                 <div class="row col-7 justify-end dense text-weight-medium">
                     <div style="font-size: 18px;" class="q-mt-sm">$ {{ item.price }}</div> 
                     <q-btn style="height: 40px;" class="q-px-sm q-mr-sm q-ml-lg" dense color="grey" label="-" @click="decreaseQuantity(index)"/>
-                    <q-input dense filled v-model="item.quantity" suffix="st" style="width: 26%;"/>
+                    <q-input debounce=500 dense filled v-model="item.quantity" mask="##" placeholder=0 @input="checkAmount(index)" suffix="st" style="width: 26%;"/>
                     <q-btn style="height: 40px;" class="q-px-sm q-ml-sm" dense color="primary" label="+" @click="increaseQuantity(index)"/>
                 </div>
             </div>
@@ -83,6 +83,12 @@ export default {
     methods: {
         redirect (address) {
             this.$router.push(address)
+        },
+        checkAmount (index) {
+            if (this.order[index].quantity < 1 || !this.order[index].quantity) {
+                this.OrderIndex = index
+                this.removalPrompt = true
+            }
         },
         increaseQuantity (index) {
             store.commit('increaseQuantity', index)

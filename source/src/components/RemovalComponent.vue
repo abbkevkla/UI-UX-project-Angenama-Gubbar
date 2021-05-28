@@ -7,7 +7,7 @@
         </q-card-section>
         <q-card-actions class="row justify-evenly q-mb-md">
             <q-btn class="q-pa-sm" rounded label="Ta bort" color="grey" size="lg" v-close-popup @click="RemoveItem(ItemIndex)"/>
-            <q-btn class="q-pa-sm" rounded label="Tillbaka" color="primary" size="lg" v-close-popup/>
+            <q-btn class="q-pa-sm" rounded label="Tillbaka" color="primary" size="lg" v-close-popup @click="RestoreItem(ItemIndex)"/>
         </q-card-actions>
     </q-card>
 </template>
@@ -22,6 +22,9 @@ export default {
     methods: {
         RemoveItem (index) {
             store.commit("removeItem", index)
+        },
+        RestoreItem (index) {
+            store.commit("restoreItem", index)
         }
     }
 }
