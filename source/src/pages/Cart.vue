@@ -11,7 +11,7 @@
            <payment-component :Success="result"></payment-component>
         </q-dialog>
 
-        <q-dialog v-model="removalPrompt">
+        <q-dialog persistent v-model="removalPrompt">
             <removal-component :ItemIndex="OrderIndex"></removal-component>
         </q-dialog>
 
