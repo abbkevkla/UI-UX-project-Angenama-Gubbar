@@ -1,20 +1,20 @@
 <template>
-  <q-card style="width: 95%; height: 75%" class="items-start">
-    <div style="width: 100%; height: 40%;">
+  <q-card style="width: 95%; height: 70vh;" class="items-start">
+    <div class="row" style="height: 40%;">
       <img :src="this.cakeInfo.image" width="100%" height="100%">
     </div>
-    <div width="100%" class="row justify-between items-center no-wrap">
-        <div class="q-ml-md q-mt-md text-h4" style="width: 50%">
+    <div style="height: 96px;" class="row justify-between items-center no-wrap">
+        <div class="col-7 q-ml-md q-my-sm text-h4">
           {{ this.cakeInfo.title }}
         </div>
-        <div class="q-mr-lg q-mt-md no-wrap text-h4 text-bold">
+        <div class="col-4 q-pr-lg no-wrap text-h4 text-bold text-right">
           {{ this.cakeInfo.price }} $
         </div>
     </div>
-    <q-card-section class="list scroll q-my-sm" style="height: 30%">
+    <q-card-section class="row list scroll q-py-none q-my-auto" style="height: 33%;">
       {{ this.cakeInfo.detailDescription }}
     </q-card-section>
-    <q-card-actions class="row justify-evenly dense text-weight-medium">
+    <q-card-actions class="row absolute-bottom justify-evenly dense text-weight-medium">
       <div>
         Lägg till i varukorg:
       </div>

@@ -16,13 +16,13 @@
         </q-dialog>
 
       <div style="max-width: 400px; height: 60vh; background-color: #ffffff;" class="list scroll q-mx-auto">
-        <q-item v-for="(item, index) in order" :key="index" class="row justify-between" style="border-bottom-style: solid; border-color: #8a8a8a">
+        <q-item v-for="(item, index) in order" :key="index" class="row justify-between q-py-md" style="border-bottom-style: solid; border-color: #8a8a8a">
             <div class="row">
-                <div style="font-size: 18px" class="col-5 text-weight-medium q-mt-sm">
+                <div style="font-size: 18px" class="col-5 text-weight-medium q-my-auto">
                     {{ item.title }}
                 </div>
-                <div class="row col-7 justify-end dense text-weight-medium">
-                    <div style="font-size: 18px;" class="q-mt-sm">$ {{ item.price }}</div> 
+                <div class="row col-7 justify-end dense text-weight-medium q-my-auto">
+                    <div style="font-size: 18px;" class="q-my-auto">$ {{ item.price }}</div> 
                     <q-btn style="height: 40px;" class="q-px-sm q-mr-sm q-ml-lg" dense color="grey" label="-" @click="decreaseQuantity(index)"/>
                     <q-input debounce=500 dense filled v-model="item.quantity" mask="##" placeholder=0 @input="checkAmount(index)" suffix="st" style="width: 26%;"/>
                     <q-btn style="height: 40px;" class="q-px-sm q-ml-sm" dense color="primary" label="+" @click="increaseQuantity(index)"/>
