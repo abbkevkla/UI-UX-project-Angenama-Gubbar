@@ -28,10 +28,9 @@
                         {{ item.title }}
                     </div>
                     <div class="row dense text-weight-medium q-pl-sm"> 
-                        <div class="col-2">
-                            <div style="font-size: 16px" class="dense text-weight-medium q-py-sm">$ {{ item.price }}</div>
+                        <div class="col-4">
+                            <div style="font-size: 16px" class="dense text-weight-medium q-py-sm">$ {{ item.price }} per styck</div>
                         </div>
-                        <div class="col-2"></div>
                         <q-btn style="height: 40px;" class="q-px-sm q-mr-sm q-ml-lg" dense color="grey" label="-" @click="decreaseQuantity(index)"/>
                         <q-input debounce=500 dense filled v-model="item.quantity" mask="##" placeholder=0 @input="checkAmount(index)" suffix="st" style="width: 26%;"/>
                         <q-btn style="height: 40px;" class="q-px-sm q-ml-sm" dense color="primary" label="+" @click="increaseQuantity(index)"/>
