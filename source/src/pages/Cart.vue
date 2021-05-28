@@ -16,16 +16,26 @@
         </q-dialog>
 
       <div style="max-width: 400px; height: 60vh; background-color: #ffffff;" class="list scroll q-mx-auto">
-        <q-item v-for="(item, index) in order" :key="index" class="row justify-between q-py-md" style="border-bottom-style: solid; border-color: #8a8a8a">
+        <q-item v-for="(item, index) in order" :key="index" class="row justify-between q-px-sm q-py-md" style="border-bottom-style: solid; border-color: #8a8a8a">
             <div class="row">
-                <div style="font-size: 18px" class="col-5 text-weight-medium q-my-auto">
-                    {{ item.title }}
+                <div class="col-2 q-pl-xs q-my-auto">
+                    <q-avatar square>
+                        <img style="object-fit: cover;" :src="getUrl(item.title)">
+                    </q-avatar>
                 </div>
-                <div class="row col-7 justify-end dense text-weight-medium q-my-auto">
-                    <div style="font-size: 18px;" class="q-my-auto">$ {{ item.price }}</div> 
-                    <q-btn style="height: 40px;" class="q-px-sm q-mr-sm q-ml-lg" dense color="grey" label="-" @click="decreaseQuantity(index)"/>
-                    <q-input debounce=500 dense filled v-model="item.quantity" mask="##" placeholder=0 @input="checkAmount(index)" suffix="st" style="width: 26%;"/>
-                    <q-btn style="height: 40px;" class="q-px-sm q-ml-sm" dense color="primary" label="+" @click="increaseQuantity(index)"/>
+                <div class="col-10">
+                    <div style="font-size: 18px" class="row q-pl-sm q-pb-sm text-weight-medium">
+                        {{ item.title }}
+                    </div>
+                    <div class="row dense text-weight-medium q-pl-sm"> 
+                        <div class="col-2">
+                            <div style="font-size: 16px" class="dense text-weight-medium q-py-sm">$ {{ item.price }}</div>
+                        </div>
+                        <div class="col-2"></div>
+                        <q-btn style="height: 40px;" class="q-px-sm q-mr-sm q-ml-lg" dense color="grey" label="-" @click="decreaseQuantity(index)"/>
+                        <q-input debounce=500 dense filled v-model="item.quantity" mask="##" placeholder=0 @input="checkAmount(index)" suffix="st" style="width: 26%;"/>
+                        <q-btn style="height: 40px;" class="q-px-sm q-ml-sm" dense color="primary" label="+" @click="increaseQuantity(index)"/>
+                    </div>
                 </div>
             </div>
         </q-item>
@@ -42,6 +52,7 @@
 
 <script>
 import store from '../store'
+import axios from 'axios'
 import PaymentComponent from '../components/PaymentComponent.vue'
 import RemovalComponent from '../components/RemovalComponent.vue'
 
@@ -55,9 +66,17 @@ export default {
             paymentPrompt: false,
             result: null,
             removalPrompt: false,
-            OrderIndex: Number
+            OrderIndex: Number,
+            cakes: null,
         }
     },
+
+    mounted() {
+        axios
+            .get('http://localhost:3000/cakes')
+            .then(response => (this.cakes = response.data))
+    },
+
     computed: {
         order () {
             return this.$store.state.orderinfo
@@ -134,6 +153,13 @@ export default {
                     this.paymentPrompt = true
                     this.result = false
                 });
+        },
+        getUrl (title) {
+            for (var cake of this.cakes) {
+                if (title == cake.title) {
+                    return cake.image;
+                }
+            }
         }
     }
 }

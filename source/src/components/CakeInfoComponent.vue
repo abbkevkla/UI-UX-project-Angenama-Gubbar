@@ -8,7 +8,7 @@
           {{ this.cakeInfo.title }}
         </div>
         <div class="col-4 q-pr-lg no-wrap text-h4 text-bold text-right">
-          {{ this.cakeInfo.price }} $
+          $ {{ this.cakeInfo.price }}
         </div>
     </div>
     <q-card-section class="row list scroll q-py-none q-my-auto" style="height: 33%;">
