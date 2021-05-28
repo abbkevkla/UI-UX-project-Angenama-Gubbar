@@ -25,9 +25,11 @@ På bakverkssidan är alla bakverk presenterade med varsin ruta. Eftersom applik
 För presentationen av medarbetare har varje medarbetare varsin ruta. Denna har en ljusare nyans än bakgrunden. Detta har två anldedningar: det blir tydligt att rutorna inte är klickbara och texten blir mer lättläslig då kontrasten mellan text och bakgrund är större. Den ljusa nyansen inger mer lungn och värme än om rutorna varit helt vita, vilket skulle ge hela sidan för skarpa kopntraster.
 
 **Placering av knappar**
+
 Genomgående har valet av placering av knappar byggt på att det ska vara enkelt att navigera runt mellan sidorna. Därför har majoriteten av knappar som ofta används placerats långt ner på skärmen för att lättare gå att trycka på. Knappar som inte används lika ofta, som exempelvis "logga ut" är placerad högt upp på skärmen för att inte lika lätt råka trycka fel. Kundvagnsknappen är placerad uppe till höger och tillbaka-knappar uppe till vänster. Detta eftersom det är standard att placera dessa knappar där, vilket gör att användare lätt kan känna igen sig i appen.
 
 **Varningsruta**
+
 På kundvagnssidan används en pop-up ruta för att försäkra om att användaren inte tryckt fel. Om användaren sätter en vara antal till mindre än 1 tillfrågas den om den vill ta bort produkten från varukorgen eller behålla den.
 
 
