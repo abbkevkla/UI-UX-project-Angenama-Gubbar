@@ -10,7 +10,9 @@
       <q-btn color="secondary" text-color="black" label="Logga ut" class="submit button" @click="logout('/')"/>
     </div>
     <div class="absolute-right q-pa-sm">
-      <h4 class="color: white; q-mr-sm text-center" style="max-width: 210px; color: white; font-family: 'Lucida Handwriting';"> “Den vise bygger inget hopp om framtiden och ångrar ingenting i det förflutna.”</h4>
+      <h4 class="color: white; q-mr-sm text-center" style="max-width: 210px; color: white; font-family: 'Lucida Handwriting'; text-shadow: 2px 2px #686868;">
+        “Den vise bygger inget hopp om framtiden och ångrar ingenting i det förflutna.”
+      </h4>
     </div>
     <div class="fixed-bottom q-pa-xl">
       <q-item>

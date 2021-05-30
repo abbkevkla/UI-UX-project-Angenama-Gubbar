@@ -32,7 +32,7 @@
                             <div style="font-size: 16px" class="dense text-weight-medium q-py-sm">${{ item.price }} / styck</div>
                         </div>
                         <q-btn style="height: 40px;" class="q-px-sm q-mr-sm q-ml-lg" dense color="grey" label="-" @click="decreaseQuantity(index)"/>
-                        <q-input debounce=500 dense filled v-model="item.quantity" mask="##" placeholder=0 @input="checkAmount(index)" suffix="st" style="width: 26%;"/>
+                        <q-input debounce=500 dense filled v-model="item.quantity" placeholder=0 @input="checkAmount(index)" suffix="st" style="width: 26%;"/>
                         <q-btn style="height: 40px;" class="q-px-sm q-ml-sm" dense color="primary" label="+" @click="increaseQuantity(index)"/>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
         </q-item>
       </div>
         <div class="text-h4 text-center text-weight-medium q-py-md" style="background-color: #ffffff; border-top-style: solid; border-color: #8a8a8a">
-          Totalt: {{ priceSum }} $
+          Totalt: ${{ priceSum }}
         </div>
       <div class="row justify-center q-my-lg">
         <q-btn v-if="validOrder == true" color="primary" label="Betala" class="q-pa-sm" style="width: 50%" size="lg" rounded @click="completeOrder()"/>
@@ -91,10 +91,18 @@ export default {
             return price
         },
         validOrder () {
+            let containsInvalidNumber = false
             if (this.order.length > 0) {
-                return true
-            } else {
+                for (const index in this.order) {
+                    if (isNaN(this.order[index].quantity)) {
+                        containsInvalidNumber = true
+                        break
+                    }
+                }
+            } if (containsInvalidNumber) {
                 return false
+            } else {
+                return true
             }
         }
     },
@@ -103,7 +111,7 @@ export default {
             this.$router.push(address)
         },
         checkAmount (index) {
-            if (this.order[index].quantity < 1 || !this.order[index].quantity) {
+            if (isNaN(this.order[index].quantity) || this.order[index].quantity < 1 || !this.order[index].quantity) {
                 this.OrderIndex = index
                 this.removalPrompt = true
             }
