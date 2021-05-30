@@ -7,21 +7,21 @@
       />
     </div>
     <div class="absolute-left q-pa-sm">
-      <q-btn color="white" text-color="black" label="Logga ut" class="submit button" @click="logout('/')"/>
+      <q-btn color="secondary" text-color="black" label="Logga ut" class="submit button" @click="logout('/')"/>
     </div>
     <div class="absolute-right q-pa-sm">
       <h4 class="color: white;" style="text-align: right; max-width: 210px; color: white;"> “Den vise bygger inget hopp om framtiden och ångrar ingenting i det förflutna.”</h4>
     </div>
     <div class="fixed-bottom q-pa-xl">
-      <q-item class="q-ma-md">
-        <q-btn class="q-mx-auto" color="primary" @click="redirect('cakes')">
+      <q-item>
+        <q-btn class="q-pa-md q-mx-auto" color="primary" @click="redirect('cakes')">
           <div class="text-h4 text-weight-medium text-center text-capitalize">
             Se bakverk
           </div>
         </q-btn>
       </q-item>
-      <q-item class="q-ma-md">
-        <q-btn class="q-mx-auto" color="primary" @click="redirect('about')">
+      <q-item>
+        <q-btn class="q-mt-md q-mx-auto" color="primary" @click="redirect('about')">
           <div class="text-h5 text-weight-medium text-center text-capitalize">
             Om oss
           </div>

@@ -3,13 +3,13 @@
     <q-header elevated>
       <q-toolbar v-if="$router.currentRoute.path !== '/'">
       
-        <q-toolbar-title class="text-dark" @click="redirect('home')">
+        <q-toolbar-title class="text-dark text-h5" @click="redirect('home')">
           Café Karma
         </q-toolbar-title>
 
         <div v-if="$router.currentRoute.path !== '/cart'">
           <q-btn flat dense round icon="shopping_cart" @click="redirect('cart')"/>
-          {{ this.itemsInCart }}
+          <q-avatar v-if="itemsInCart != 0" size="24px" color="red"> {{ this.itemsInCart }} </q-avatar>
         </div>
       </q-toolbar>
     </q-header>
