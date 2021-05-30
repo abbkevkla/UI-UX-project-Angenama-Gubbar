@@ -3,7 +3,7 @@
     <q-header elevated>
       <q-toolbar v-if="$router.currentRoute.path !== '/'">
       
-        <q-toolbar-title class="text-dark text-h5" @click="redirect('home')">
+        <q-toolbar-title class="text-dark text-h5" style="font-family: 'Lucida Handwriting';" @click="redirect('home')">
           Café Karma
         </q-toolbar-title>
 

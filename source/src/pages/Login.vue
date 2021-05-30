@@ -3,7 +3,7 @@
         <img style="object-fit: cover; height: 100vh; width: 100vw; opacity: 0.8" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg-s-msn-com.akamaized.net%2Ftenant%2Famp%2Fentityid%2FAACFQlr.img&f=1&nofb=1">   
         <div class="flex absolute-top q-my-xl q-mx-auto" style="width: 70vw;">
             <div class="q-gutter-lg q-mx-auto">
-                <h2 class="q-py-lg q-ml-none text-center text-white text-weight-medium">Café Karma</h2>
+                <h2 class="q-py-lg q-ml-none text-center text-white text-weight-medium" style="font-family: 'Lucida Handwriting';">Café Karma</h2>
                 <div v-if="failedLogIn" class="row items-start q-ml-none">
                     <q-card class="my-card text-negative bg-red-1" style="width: 100%;">
                     <q-card-section>
