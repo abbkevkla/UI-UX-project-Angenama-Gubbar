@@ -29,9 +29,13 @@ För presentationen av medarbetare har varje medarbetare varsin ruta. Denna har 
 
 Genomgående har valet av placering av knappar byggt på att det ska vara enkelt att navigera runt mellan sidorna. Därför har majoriteten av knappar som ofta används placerats långt ner på skärmen för att lättare gå att trycka på. Knappar som inte används lika ofta, som exempelvis "logga ut" är placerad högt upp på skärmen för att inte lika lätt råka trycka fel. Kundvagnsknappen är placerad uppe till höger och tillbaka-knappar uppe till vänster. Detta eftersom det är standard att placera dessa knappar där, vilket gör att användare lätt kan känna igen sig i appen.
 
-**Varningsruta**
+**Kundvagns-knappen**
+För att ta sig till betalningssidan måste man trycka på kundvagnsknappen uppe i högra hörnet då det inte finns några knappar för det någon annanstans. Detta är ganska vanligt förekommande på moderna appar och hemsidor, och många som är vana vid mobiler kommer känna igen upplägget. För att förtydliga knappens funktion dyker det upp en röd cirkel bredvid knappen när något lagts in i kundvagnen. Den röda pricken är för att ytterligare förtydliga att det är en knapp, så att även en mer ovan person skulle kunna hantera appen utan några större besvär. Den röda färgen valdes för att det är en färg som sticker ut och syns tydligt, samtidigt som den inte är alltför olik appens övriga färger. Utöver det ryms även en siffra inom pricken, som visar hur många olika sorters bakverk man har i kundvagnen.
 
-På kundvagnssidan används en pop-up ruta för att försäkra om att användaren inte tryckt fel. Om användaren sätter en vara antal till mindre än 1 tillfrågas den om den vill ta bort produkten från varukorgen eller behålla den.
+**Betalningssidan**
+På betalningssidan (kundvagnssidan) kan man se alla varor man valt, hur många man valt av vardera samt deras styckpris. Man har även möjlighet att justera antalen antingen med + och - knapparna, eller genom att skriva in direkt i rutan där antalet visas. Självklart visas även summan av alla varorna.
+
+För att undvika att kunder ska kunna lägga tomma ordrar tas varorna bort om deras antal sätts till noll. För att undvika att kunden skulle råka ta bort något och behöva gå tillbaks och göra om beställningen används en pop-up ruta för att försäkra om att användaren inte tryckt fel. Om användaren sätter en vara antal till mindre än 1 tillfrågas den om den vill ta bort produkten från varukorgen eller behålla den.
 
 
 ## Testning
