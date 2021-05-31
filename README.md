@@ -17,7 +17,7 @@ Både login-skärmen och hemskärmen innehåller en bild på ett buddhistiskt te
 
 **Header**
 
-Längst upp på varje sida (förutom loginsidan) finns en orange header, där konditoriets namn syns samt kundvagnen. Denna har funktionen att förstärka orange som appens primärfärg och ser till att man inte glömmer vad det är för app man använder. Utöver detta fungerar dessutom både namnet och kundvagnen som knappar. Namnet tar dig tillbaka till hemskärmen och kundvagnen tar dig till kundvagnssidan. Detta är standard på många moderna appar, och utan dessa två finns risken att appen känns klumpig och svår att navigera igeonm. 
+Längst upp på varje sida (förutom loginsidan) finns en orange header, där konditoriets namn syns samt kundvagnen. Denna har funktionen att förstärka orange som appens primärfärg och ser till att man inte glömmer vad det är för app man använder. Utöver detta fungerar dessutom både namnet och kundvagnen som knappar. Namnet tar dig tillbaka till hemskärmen och kundvagnen tar dig till kundvagnssidan. Detta är standard på många moderna appar, och utan dessa två finns risken att appen känns klumpig och svår att navigera igenom.
 
 ## UX (Användarupplevelse)
 
