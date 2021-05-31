@@ -31,7 +31,7 @@ export default new Vuex.Store({
       state.orderinfo[itemIndex].quantity = 1
     },
     increaseQuantity (state, itemIndex) {
-      state.orderinfo[itemIndex].quantity += 1
+      state.orderinfo[itemIndex].quantity = Number(state.orderinfo[itemIndex].quantity) + 1
     },
     decreaseQuantity (state, itemIndex) {
       state.orderinfo[itemIndex].quantity -= 1

@@ -32,7 +32,7 @@
                             <div style="font-size: 16px" class="dense text-weight-medium q-py-sm">${{ item.price }} / styck</div>
                         </div>
                         <q-btn style="height: 40px;" class="q-px-sm q-mr-sm q-ml-lg" dense color="grey" label="-" @click="decreaseQuantity(index)"/>
-                        <q-input debounce=500 dense filled v-model="item.quantity" placeholder=0 @input="checkAmount(index)" suffix="st" style="width: 26%;"/>
+                        <q-input mask="##" debounce=500 dense filled v-model="item.quantity" placeholder=0 @input="checkAmount(index)" suffix="st" style="width: 26%;"/>
                         <q-btn style="height: 40px;" class="q-px-sm q-ml-sm" dense color="primary" label="+" @click="increaseQuantity(index)"/>
                     </div>
                 </div>
@@ -91,18 +91,10 @@ export default {
             return price
         },
         validOrder () {
-            let containsInvalidNumber = false
             if (this.order.length > 0) {
-                for (const index in this.order) {
-                    if (isNaN(this.order[index].quantity)) {
-                        containsInvalidNumber = true
-                        break
-                    }
-                }
-            } if (containsInvalidNumber) {
-                return false
-            } else {
                 return true
+            } else {
+                return false
             }
         }
     },
@@ -111,7 +103,7 @@ export default {
             this.$router.push(address)
         },
         checkAmount (index) {
-            if (isNaN(this.order[index].quantity) || this.order[index].quantity < 1 || !this.order[index].quantity) {
+            if (this.order[index].quantity < 1 || !this.order[index].quantity) {
                 this.OrderIndex = index
                 this.removalPrompt = true
             }
