@@ -31,7 +31,7 @@ På bakverkssidan är alla bakverk presenterade med varsin ruta. Eftersom applik
 
 **Presentation av medarbetare**
 
-För presentationen av medarbetare har varje medarbetare varsin ruta. Denna har en ljusare nyans än bakgrunden. Detta har två anldedningar: det blir tydligt att rutorna inte är klickbara och texten blir mer lättläslig då kontrasten mellan text och bakgrund är större. Den ljusa nyansen inger mer lungn och värme än om rutorna varit helt vita, vilket skulle ge hela sidan för skarpa kopntraster.
+För presentationen av medarbetare har varje medarbetare varsin ruta. Denna har en ljusare nyans än bakgrunden. Detta har två anldedningar: det blir tydligt att rutorna inte är klickbara och texten blir mer lättläslig då kontrasten mellan text och bakgrund är större. Den ljusa nyansen inger mer lugn och värme än om rutorna varit helt vita, vilket skulle ge hela sidan för skarpa kopntraster.
 
 <img src="bilder/aboutpage.PNG" width="150" height="300">
 
