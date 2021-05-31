@@ -1542,6 +1542,26 @@
       "totalPrice": 8,
       "timestamp": "2021-05-28T08:43:03.617Z",
       "id": 59
+    },
+    {
+      "customerId": 2,
+      "cakes": [
+        {
+          "cakeId": 7,
+          "quantity": 2
+        },
+        {
+          "cakeId": 4,
+          "quantity": 2
+        },
+        {
+          "cakeId": 1,
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 30,
+      "timestamp": "2021-05-31T06:30:23.164Z",
+      "id": 60
     }
   ]
 }

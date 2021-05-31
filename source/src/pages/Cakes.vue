@@ -1,12 +1,12 @@
 <template>
   <q-page style="background-color: #f6edbe">
-    <div>
-        <div class="row q-pt-lg">
-            <q-btn round dense flat icon="arrow_left" size="md" @click="redirect('home')"/>
-            <div class="text-h4 text-center text-weight-medium">
-                Bakverk
-            </div>
+    <q-btn round dense flat icon="arrow_left" size="md" style="margin-top: 10vh;" class="fixed-top-left q-mx-xs" @click="redirect('home')"/>
+    <div style="padding-top: 3.5vh;" class="row">
+        <div class="q-mx-auto text-h4 text-center text-weight-medium">
+            Bakverk
         </div>
+    </div>
+    <div>
         <div class="text-h6 text-center text-weight-light q-py-md q-px-md" style="border-bottom-style: solid;">
             Vi erbjuder helt nybakade bakverk gjorda på uteslutande ekologiska råvaror närproducerade i Västmanland. 
         </div>

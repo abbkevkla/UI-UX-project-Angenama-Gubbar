@@ -1,8 +1,9 @@
 <template>
   <q-page style="background-color: #f6edbe;">
-      <div class="row q-pt-lg q-pb-md">
-            <q-btn round dense flat icon="arrow_left" size="md" @click="redirect('cakes')"/>
-            <div class="text-h4 text-center text-weight-medium">
+      
+        <q-btn round dense flat icon="arrow_left" size="md" style="margin-top: 10vh;" class="fixed-top-left q-mx-xs" @click="redirect('cakes')"/>
+        <div style="padding-top: 3.5vh;" class="row q-pb-lg">
+            <div class="q-mx-auto text-h4 text-center text-weight-medium">
                 Din order
             </div>
         </div>
