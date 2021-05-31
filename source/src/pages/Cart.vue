@@ -40,7 +40,7 @@
             </div>
         </q-item>
       </div>
-        <div class="text-h4 text-center text-weight-medium q-py-md" style="background-color: #ffffff; border-top-style: solid; border-color: #8a8a8a">
+        <div class="text-h5 text-center text-weight-medium q-py-md" style="background-color: #ffffff; border-top-style: solid; border-color: #8a8a8a">
           Totalt: ${{ priceSum }}
         </div>
       <div class="row justify-center q-my-lg">
