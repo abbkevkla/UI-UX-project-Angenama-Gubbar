@@ -19,6 +19,10 @@ Både login-skärmen och hemskärmen innehåller en bild på ett buddhistiskt te
 
 Längst upp på varje sida (förutom loginsidan) finns en orange header, där konditoriets namn syns samt kundvagnen. Denna har funktionen att förstärka orange som appens primärfärg och ser till att man inte glömmer vad det är för app man använder. Utöver detta fungerar dessutom både namnet och kundvagnen som knappar. Namnet tar dig tillbaka till hemskärmen och kundvagnen tar dig till kundvagnssidan. Detta är standard på många moderna appar, och utan dessa två finns risken att appen känns klumpig och svår att navigera igenom.
 
+**Språk**
+
+En detalj som finns i appen är att svenska och engelska blandas. Detta är delvis avsiktligt. Huvudspråket på appen är svenska, då det är den marknaden vi skapat appen för. Däremot är vissa saker, såsom medarbetarnas titlar och bakverkens namn på engelska. Detta är medvetet, då det ger en modernare touch på appen. Det låter lite mer exklusivt och spännande med titlar och namn på engelska. Något som inte är helt avsikltigt är att alla beskrivningar av bakverk är på engelska och priserna är i dollar. Dessa hade hellre varit på svenska, men eftersom att all data var förbestämd så fick det bli en kompromiss. Vi tycker att de engelska titlarna ger mer än vad de engelska beskrivningarna tar ifrån, men det är självklart en möjlig förbättringsmöjlighet. 
+
 ## UX (Användarupplevelse)
 
 Appen har designats för att vara enkel att använda med mobilen. Huvudfokus har varit att presentara informationen på ett tydligt sätt och undvika onödigt många steg och knapptryck.
