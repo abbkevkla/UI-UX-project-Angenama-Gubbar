@@ -2,7 +2,6 @@
 
 Café Karma är ett modernt och trendriktigt buddhistiskt konditori. I denna repo hittas konditoriets app. En app valdes för att göra beställningarna så smidiga som möjligt, eftersom att många idag har med sig mobilerna vart de än går. Appen är designad för iPhone X.
 
-
 ## Designen
 **Färgval**
 
@@ -11,7 +10,10 @@ Som appens primära färg valdes orange, då det är en typiskt buddhistisk fär
 **Omslagfoto**
 
 Både login-skärmen och hemskärmen innehåller en bild på ett buddhistiskt tempel i en djup skog med ett vattenfall i bakgrunden, vilket är något som återigen inger en känsla av lugn, samtidigt som det förstärker intrycket av appens buddhistiska inslag. Templet är dessutom i en färg som matchar appens primära färg, vilket får bilden att passa in bättre och inte kännas påtvingad.
-
+<p>
+  <img src="bilder/loginpage.PNG" width="150" height="300">
+  <img src="bilder/homepage.PNG" width="150" height="300">
+</p>
 
 ## UX (Användarupplevelse)
 
@@ -21,9 +23,13 @@ Appen har designats för att vara enkel att använda med mobilen. Huvudfokus har
 
 På bakverkssidan är alla bakverk presenterade med varsin ruta. Eftersom applikationen är mobilanpassad är det viktigt att varje ruta är tydlig och lätt går att trycka på. Av den anledningen presenteras bakverken med en ruta per rad, och för att läsa mer om varje bakverk kan man trycka på hela rutan. Detta ger en snabb överblick och enkel möjlighet att läsa mer om varje bakverk samt lägga till de i varukorgen.
 
+<img src="bilder/cakespage.PNG" width="150" height="300">
+
 **Presentation av medarbetare**
 
 För presentationen av medarbetare har varje medarbetare varsin ruta. Denna har en ljusare nyans än bakgrunden. Detta har två anldedningar: det blir tydligt att rutorna inte är klickbara och texten blir mer lättläslig då kontrasten mellan text och bakgrund är större. Den ljusa nyansen inger mer lungn och värme än om rutorna varit helt vita, vilket skulle ge hela sidan för skarpa kopntraster.
+
+<img src="bilder/aboutpage.PNG" width="150" height="300">
 
 **Placering av knappar**
 
@@ -33,12 +39,18 @@ Genomgående har valet av placering av knappar byggt på att det ska vara enkelt
 
 För att ta sig till betalningssidan måste man trycka på kundvagnsknappen uppe i högra hörnet då det inte finns några knappar för det någon annanstans. Detta är ganska vanligt förekommande på moderna appar och hemsidor, och många som är vana vid mobiler kommer känna igen upplägget. För att förtydliga knappens funktion dyker det upp en röd cirkel bredvid knappen när något lagts in i kundvagnen. Den röda pricken är för att ytterligare förtydliga att det är en knapp, så att även en mer ovan person skulle kunna hantera appen utan några större besvär. Den röda färgen valdes för att det är en färg som sticker ut och syns tydligt, samtidigt som den inte är alltför olik appens övriga färger. Utöver det ryms även en siffra inom pricken, som visar hur många olika sorters bakverk man har i kundvagnen.
 
+<img src="bilder/cart.PNG" width="50" height="35">
+
 **Betalningssidan**
 
 På betalningssidan (kundvagnssidan) kan man se alla varor man valt, hur många man valt av vardera samt deras styckpris. Man har även möjlighet att justera antalen antingen med + och - knapparna, eller genom att skriva in direkt i rutan där antalet visas. Självklart visas även prissumman av alla varorna.
 
 För att undvika att kunder ska kunna lägga tomma ordrar tas varorna bort om deras antal sätts till noll. För att undvika att kunden skulle råka ta bort något och behöva gå tillbaks och göra om beställningen används en pop-up ruta för att försäkra om att användaren inte tryckt fel. Om användaren sätter en vara antal till mindre än 1 tillfrågas den om den vill ta bort produkten från varukorgen eller behålla den.
 
+<p>
+  <img src="bilder/cartpage.PNG" width="150" height="300">
+  <img src="bilder/cartpopup.PNG" width="150" height="300">
+</p>
 
 ## Testning
 
