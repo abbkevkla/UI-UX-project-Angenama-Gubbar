@@ -5,7 +5,7 @@ Café Karma är ett modernt och trendriktigt buddhistiskt konditori. I denna rep
 ## Designen
 **Färgval**
 
-Som appens primära färg valdes orange, då det är en typiskt buddhistisk färg som exempelvis buddhistiska munkar brukar bära. Det har även fördelen att få appen att kännas varm och välkomnande. Som bakgrund valdes en ljus nyans av orange/brunt, som bidrar ytterligare till att ingiva en känsla av värme och lugn i appen, vilket för många är vad buddhismen handlar om. Genom hela appen har vi försökt undvika utstående färger och starka kontraster mellan färger för att inte störa lugnet i appen. Detta bidrar även till att appen får en ren och modern känsla. För att lättare navigera runt i appen har kanppar och interaktiva komponenter fått en lite mer intensiv orange färg. Detta gör det tydligt att de är tänkta att trycka på, och användaren behöver inte fundera på hur den ska navigera sig runt.
+Som appens primära färg valdes orange, då det är en typiskt buddhistisk färg som exempelvis buddhistiska munkar brukar bära. Det har även fördelen att få appen att kännas varm och välkomnande. Som bakgrund valdes en ljus nyans av orange/brunt, som bidrar ytterligare till att ingiva en känsla av värme och lugn i appen, vilket för många är vad buddhismen handlar om. Genom hela appen har vi försökt undvika utstående färger och starka kontraster mellan färger för att inte störa lugnet i appen. Detta bidrar även till att appen får en ren och modern känsla. För att lättare navigera runt i appen har knappar och interaktiva komponenter fått en lite mer intensiv orange färg. Detta gör det tydligt att de är tänkta att trycka på, och användaren behöver inte fundera på hur den ska navigera sig runt.
 
 **Omslagfoto**
 
